@@ -1,21 +1,21 @@
-# CSV oszlopmódosító script
+# CSV Column Modifier Script
 
-Ez a Python script CSV fájlokban keres egy megadott oszlopot (cella nevét megadva), majd a talált cellák végére `;` karaktert illeszt.  
-A program megőrzi az eredeti fájl struktúráját és csak a célzott oszlopot módosítja.
-
----
-
-## Funkciók
-
-- CSV fájl feldolgozása UTF-8 kódolással
-- Adott oszlopnév (case-insensitive) alapján keresés
-- Csak nem üres cellákat módosít
-- Az eredmény új fájlba mentése
-- Kijelzi, hány módosítás történt
+This Python script searches for a specified column (by name) in CSV files and appends a `;` character to the end of the matching cells.  
+The program preserves the original structure of the file and only modifies the targeted column.
 
 ---
 
-## Verziók
+## Features
 
-- Egyszerű terminal felület (csvEditTer.py)
-- Vizuális felület (csvEditVis.py)
+- Processes CSV files using UTF-8 encoding
+- Searches by column name (case-insensitive)
+- Modifies only non-empty cells
+- Saves the result into a new file
+- Displays the total number of modifications made
+
+---
+
+## Versions
+
+- Simple terminal interface (`csvEditTer.py`)
+- Visual interface (`csvEditVis.py`)
