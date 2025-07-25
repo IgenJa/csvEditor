@@ -17,5 +17,5 @@ A program megőrzi az eredeti fájl struktúráját és csak a célzott oszlopot
 
 ## Verziók
 
-Egyszerű terminal felület (csvEditTer.py)
-Vizuális felület (csvEditVis.py)
+- Egyszerű terminal felület (csvEditTer.py)
+- Vizuális felület (csvEditVis.py)
