@@ -142,7 +142,7 @@ class CSVQuoteAdderGUI:
                 original_line = line
                 stripped_line = line.strip()
                 
-                #sima csak masol
+                #just copy
                 if not stripped_line or stripped_line.startswith('#') or stripped_line == '-END-':
                     processed_lines.append(original_line)
                     continue
@@ -159,7 +159,7 @@ class CSVQuoteAdderGUI:
                     current_headers = [col.strip() for col in stripped_line.split(',')]
                     processed_lines.append(original_line)
                     
-                    #keres cella
+                    #find
                     target_positions = []
                     for idx, header in enumerate(current_headers):
                         if header.lower() == cella.lower():
@@ -187,7 +187,7 @@ class CSVQuoteAdderGUI:
                     else:
                         processed_lines.append(original_line)
                 else:
-                    #tobbi csak masol
+                    #just copy
                     processed_lines.append(original_line)
             
             #save
