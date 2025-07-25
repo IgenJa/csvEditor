@@ -12,7 +12,7 @@ cella = input("Cella (oszlop) neve: ")
 with open(toOpen, encoding="utf-8") as f:
     lines = f.readlines()
 
-#kirak ";"
+#insert ";"
 def add_quotes(cell):
     if cell and str(cell).strip() and str(cell).strip() != "None":
         return f'"{cell};"'
@@ -27,7 +27,7 @@ for i, line in enumerate(lines):
     original_line = line
     stripped_line = line.strip()
     
-    #sima sorok masol
+    #copy
     if not stripped_line or stripped_line.startswith('#') or stripped_line == '-END-':
         processed_lines.append(original_line)
         continue
@@ -39,12 +39,12 @@ for i, line in enumerate(lines):
         print(f"\n=== {stripped_line} szakasz ===")
         continue
     
-    #headerek
+    #headers
     if 'id,' in stripped_line and 'tag_name' in stripped_line:
         current_headers = [col.strip() for col in stripped_line.split(',')]
         processed_lines.append(original_line)
         
-        #megkeres cella
+        #find
         target_positions = []
         for idx, header in enumerate(current_headers):
             if header.lower() == cella.lower():
@@ -54,11 +54,11 @@ for i, line in enumerate(lines):
         print(f"'{cella}' oszlop pozíciói: {target_positions}")
         continue
     
-    #feldolgoz
+    #proc
     if current_headers and stripped_line.startswith(','):
         cols = stripped_line.split(',')
         
-        #megtalaltakra
+        #to
         modified = False
         for pos in target_positions:
             if pos < len(cols):
@@ -75,7 +75,7 @@ for i, line in enumerate(lines):
         else:
             processed_lines.append(original_line)
     else:
-        #tobbit csak masol
+        #just copy
         processed_lines.append(original_line)
 
 with open(toSave, "w", encoding="utf-8") as f:
